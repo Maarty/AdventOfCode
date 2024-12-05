@@ -28,7 +28,7 @@ namespace AdventOfCode2024
 
         private async Task<PuzzleResult> SolvePuzzleAsync(Func<string, string> method)
         {
-            var input = await LoadInputAsync();
+            var input = (await LoadInputAsync()).ReplaceLineEndings();
 
             var stopwatch = Stopwatch.StartNew();
             var result = method(input);
@@ -49,7 +49,7 @@ namespace AdventOfCode2024
 
         protected long[] GetNumbersInput(string input)
         {
-            return input.ReplaceLineEndings().Split(Environment.NewLine).Select(long.Parse).ToArray();
+            return input.Split(Environment.NewLine).Select(long.Parse).ToArray();
         }
 
         protected int[][] GetMultipleNumbersInput(string input, string delimiter = null)
@@ -60,7 +60,7 @@ namespace AdventOfCode2024
 
         protected string[] GetLinesInput(string input)
         {
-            return input.ReplaceLineEndings().Split(Environment.NewLine).ToArray();
+            return input.Split(Environment.NewLine).ToArray();
         }
 
         protected T[,] LoadMatrix<T>(string input)
