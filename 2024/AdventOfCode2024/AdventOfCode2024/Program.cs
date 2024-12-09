@@ -1,6 +1,6 @@
 ﻿using AdventOfCode2024;
 
-const string dayNumber = "07";
+const string dayNumber = "08";
 
 var puzzleSolverFactory = new PuzzleSolverFactory();
 
