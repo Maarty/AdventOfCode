@@ -1,6 +1,6 @@
 ﻿using AdventOfCode2024;
 
-const string dayNumber = "08";
+const string dayNumber = "09";
 
 var puzzleSolverFactory = new PuzzleSolverFactory();
 
@@ -24,5 +24,3 @@ Console.WriteLine($"Puzzle result: {result.Result} . Time elapsed: {result.TimeE
 var resultExtended = await solver.SolvePuzzleExtendedAsync();
 
 Console.WriteLine($"Puzzle extended result: {resultExtended.Result} . Time elapsed: {resultExtended.TimeElapsed}");
-
-Console.ReadLine();
