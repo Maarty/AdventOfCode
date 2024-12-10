@@ -30,6 +30,23 @@
             return x.X == y.X && x.Y == y.Y;
         }
 
+        public string OrientationString()
+        {
+            switch (X)
+            {
+                case 1 when Y == 0: return "Right";
+                case 1 when Y == 1: return "Down-right (diagonal)";
+                case 0 when Y == 1: return "Down";
+                case -1 when Y == 1: return "Down-left (diagonal)";
+                case -1 when Y == 0: return "Left";
+                case -1 when Y == -1: return "Up-left (diagonal)";
+                case 0 when Y == -1: return "Up";
+                case 1 when Y == -1: return "Up-right (diagonal)";
+            }
+
+            return string.Empty;
+        }
+
         public int GetHashCode(Point obj)
         {
             return HashCode.Combine(obj.X, obj.Y);
