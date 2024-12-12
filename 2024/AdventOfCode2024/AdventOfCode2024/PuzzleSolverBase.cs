@@ -73,6 +73,16 @@ namespace AdventOfCode2024
             return matrix;
         }
 
+        protected T[,] LoadMatrix<T>(string input, Func<string, T> assignationFunction)
+        {
+            var lines = GetLinesInput(input);
+            var matrix = new T[lines[0].Length, lines.Length];
+
+            IterateMatrix(matrix, (x, y) => matrix[x, y] = assignationFunction(lines[y][x].ToString()));
+
+            return matrix;
+        }
+
         protected void IterateMatrix<T>(T[,] matrix, Action<int, int> xAction, Action<int> yAction = null)
         {
             var maxY = matrix.GetLength(1);
