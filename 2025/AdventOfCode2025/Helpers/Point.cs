@@ -53,6 +53,21 @@ public record Point(int X, int Y) : IEqualityComparer<Point>
     }
 }
 
+public static class PointHelpers
+{
+    public static Point[] AllDirections =
+    [
+        new(1, 0),// Right
+        new(1, 1),// Down-right (diagonal)
+        new(0, 1), // Down
+        new(-1, 1), // Down-left (diagonal)
+        new(-1, 0), // Left
+        new(-1, -1), //Up-left (diagonal)
+        new(0, -1), // Up
+        new(1, -1) // Up-right (diagonal)
+    ];
+}
+
 public static class PointExtensions
 {
     public static bool IsInsideMatrix<T>(this Point point, T[,] matrix)
